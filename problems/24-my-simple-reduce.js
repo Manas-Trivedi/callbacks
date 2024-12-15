@@ -34,8 +34,12 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   optional initial accumulator
 *******************************************************************************/
 
-let mySimpleReduce = function() {
-
+let mySimpleReduce = function(arr, cbf) {
+    let acc = arr[0]; // Start with the first element as the accumulator
+    for (let i = 1; i < arr.length; i++) { // Start from the second element
+        acc = cbf(acc, arr[i]); // Update the accumulator
+    }
+    return acc; // Return the final accumulated value
 };
 
 
